@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30128.74
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_avk.Main", "Kpo4381_avk.Main\Kpo4381_avk.Main.csproj", "{ACB506D0-AB30-4432-99D7-3137287AD72D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_avk.Lib", "Kpo4381_avk.Lib\Kpo4381_avk.Lib.csproj", "{77439000-C0BD-40CF-A21C-66DFF506748B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACB506D0-AB30-4432-99D7-3137287AD72D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB506D0-AB30-4432-99D7-3137287AD72D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB506D0-AB30-4432-99D7-3137287AD72D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB506D0-AB30-4432-99D7-3137287AD72D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77439000-C0BD-40CF-A21C-66DFF506748B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77439000-C0BD-40CF-A21C-66DFF506748B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77439000-C0BD-40CF-A21C-66DFF506748B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77439000-C0BD-40CF-A21C-66DFF506748B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A55600FE-23A2-4C3B-B7D2-E68F4E19E6E4}
+	EndGlobalSection
+EndGlobal
