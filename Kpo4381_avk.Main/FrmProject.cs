@@ -22,7 +22,6 @@ namespace Kpo4381_avk.Main
 
         private SearchProject _searchProject = null;
 
-
         public SearchProject searchProject
         {
             get { return _searchProject; }
