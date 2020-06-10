@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,9 @@ namespace Kpo4381_avk.Main
         public FrmMain()
         {
             InitializeComponent();
+            txtLogPath.Text = AppGlobalSettings.logPath;
+            txtDataFileName.Text = AppGlobalSettings.dataFileName;
+
         }
         private List<SearchProject> searchProjectsList = null;
         private BindingSource bsSearchProject = new BindingSource();
@@ -28,8 +32,9 @@ namespace Kpo4381_avk.Main
         {
             try
             {
-                MockSearchProjectListCommand loader = new MockSearchProjectListCommand();
+                ISearchProjectListLoader loader = new SearchProjectListTestLoader();
                 loader.Execute();
+                searchProjectsList = loader.searchProjectList;
                 bsSearchProject.DataSource = searchProjectsList;
                 dgvMockSearchProjectListCommand.DataSource = bsSearchProject;
             }
@@ -58,5 +63,7 @@ namespace Kpo4381_avk.Main
         {
 
         }
+
+        
     }
 }

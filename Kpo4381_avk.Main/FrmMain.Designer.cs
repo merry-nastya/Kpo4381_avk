@@ -36,6 +36,10 @@
             this.mnOpenProject = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.dgvMockSearchProjectListCommand = new System.Windows.Forms.DataGridView();
+            this.txtLogPath = new System.Windows.Forms.TextBox();
+            this.txtDataFileName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockSearchProjectListCommand)).BeginInit();
             this.SuspendLayout();
@@ -64,14 +68,14 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(224, 26);
+            this.mnExit.Size = new System.Drawing.Size(150, 26);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(224, 26);
+            this.mnOpen.Size = new System.Drawing.Size(150, 26);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
             // 
@@ -110,11 +114,47 @@
             this.dgvMockSearchProjectListCommand.Size = new System.Drawing.Size(776, 150);
             this.dgvMockSearchProjectListCommand.TabIndex = 2;
             // 
+            // txtLogPath
+            // 
+            this.txtLogPath.Location = new System.Drawing.Point(79, 394);
+            this.txtLogPath.Name = "txtLogPath";
+            this.txtLogPath.Size = new System.Drawing.Size(113, 22);
+            this.txtLogPath.TabIndex = 3;
+            // 
+            // txtDataFileName
+            // 
+            this.txtDataFileName.Location = new System.Drawing.Point(326, 392);
+            this.txtDataFileName.Name = "txtDataFileName";
+            this.txtDataFileName.Size = new System.Drawing.Size(164, 22);
+            this.txtDataFileName.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 397);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "logPath";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(225, 397);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 17);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "dataFileName";
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDataFileName);
+            this.Controls.Add(this.txtLogPath);
             this.Controls.Add(this.dgvMockSearchProjectListCommand);
             this.Controls.Add(this.SStatus);
             this.Controls.Add(this.menuStrip1);
@@ -139,6 +179,10 @@
         private System.Windows.Forms.ToolStripMenuItem mnOpenProject;
         private System.Windows.Forms.StatusStrip SStatus;
         private System.Windows.Forms.DataGridView dgvMockSearchProjectListCommand;
+        private System.Windows.Forms.TextBox txtLogPath;
+        private System.Windows.Forms.TextBox txtDataFileName;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

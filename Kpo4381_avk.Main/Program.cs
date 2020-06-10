@@ -14,6 +14,7 @@ namespace Kpo4381_avk.Main
         [STAThread]
         static void Main()
         {
+            Kpo4381_avk.Lib.AppGlobalSettings.Initialize();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmMain());
