@@ -26,16 +26,23 @@ namespace Kpo4381_avk.Lib
 
         public void SaveFile(List<SearchProject> searchProjectList)
         {
-            _searchProjectList = searchProjectList;
-            List<string> strings = new List<string>();
-            foreach( SearchProject i in _searchProjectList)
+            if(searchProjectList == null)
             {
-               string searchProject = i.year + "|" + i.director + "|" + i.diamAntenna + "|" + i.frequency;
-                strings.Add(searchProject);
-
+                throw new NoDataUploadedException("Нет данных для сохранения");
             }
-            File.WriteAllLines(_saveFileName, strings); 
+            else
+            {
+                _searchProjectList = searchProjectList;
+                List<string> strings = new List<string>();
+                foreach (SearchProject i in _searchProjectList)
+                {
+                    string searchProject = i.year + "|" + i.director + "|" + i.diamAntenna + "|" + i.frequency;
+                    strings.Add(searchProject);
 
+                }
+                File.WriteAllLines(_saveFileName, strings);
+            }
+           
         }
     }
 }

@@ -84,8 +84,22 @@ namespace Kpo4381_avk.Main
 
         private void mnSaveSearchProjects_Click(object sender, EventArgs e)
         {
-            ISearchProjectListSaver saver = IOCcontainer.container.Resolve<ISearchProjectListSaver>();
-            saver.SaveFile(searchProjectsList);
+            try
+            {
+                ISearchProjectListSaver saver = IOCcontainer.container.Resolve<ISearchProjectListSaver>();
+                saver.SaveFile(searchProjectsList);
+            }
+            catch(NoDataUploadedException ex)
+            {
+                MessageBox.Show("Ошибка №:3 " + ex.Message);
+                LogUtility.ErrorLog(ex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка №2: " + ex.Message);
+                LogUtility.ErrorLog(ex);
+            }
+
         }
 
         private void mmFile_Click(object sender, EventArgs e)
