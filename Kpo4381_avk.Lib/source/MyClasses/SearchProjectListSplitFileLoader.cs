@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kpo4381_avk.Utility;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,9 +30,9 @@ namespace Kpo4381_avk.Lib
             get { return _status; }
         }
 
-        public SearchProjectListSplitFileLoader(string dataFileName)
+        public SearchProjectListSplitFileLoader()
         {
-            _dataFileName = dataFileName;
+            _dataFileName = AppGlobalSettings.dataFileName;
             _searchProjectList = new List<SearchProject>();
         }
 

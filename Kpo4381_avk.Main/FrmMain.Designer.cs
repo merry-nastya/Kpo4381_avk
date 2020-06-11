@@ -40,6 +40,9 @@
             this.txtDataFileName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTypeFactory = new System.Windows.Forms.TextBox();
+            this.mnSaveSearchProjects = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockSearchProjectListCommand)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +55,7 @@
             this.mmProject});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,22 +63,23 @@
             // 
             this.mmFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnExit,
-            this.mnOpen});
+            this.mnOpen,
+            this.mnSaveSearchProjects});
             this.mmFile.Name = "mmFile";
-            this.mmFile.Size = new System.Drawing.Size(70, 24);
+            this.mmFile.Size = new System.Drawing.Size(70, 26);
             this.mmFile.Text = "1.Файл";
             // 
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(150, 26);
+            this.mnExit.Size = new System.Drawing.Size(224, 26);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(150, 26);
+            this.mnOpen.Size = new System.Drawing.Size(224, 26);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
             // 
@@ -84,7 +88,7 @@
             this.mmProject.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnOpenProject});
             this.mmProject.Name = "mmProject";
-            this.mmProject.Size = new System.Drawing.Size(137, 24);
+            this.mmProject.Size = new System.Drawing.Size(137, 26);
             this.mmProject.Text = "2.Проект поиска";
             this.mmProject.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -146,11 +150,36 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "dataFileName";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(511, 395);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 17);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "typeFactory";
+            // 
+            // txtTypeFactory
+            // 
+            this.txtTypeFactory.Location = new System.Drawing.Point(600, 389);
+            this.txtTypeFactory.Name = "txtTypeFactory";
+            this.txtTypeFactory.Size = new System.Drawing.Size(100, 22);
+            this.txtTypeFactory.TabIndex = 8;
+            // 
+            // mnSaveSearchProjects
+            // 
+            this.mnSaveSearchProjects.Name = "mnSaveSearchProjects";
+            this.mnSaveSearchProjects.Size = new System.Drawing.Size(224, 26);
+            this.mnSaveSearchProjects.Text = "Сохранить";
+            this.mnSaveSearchProjects.Click += new System.EventHandler(this.mnSaveSearchProjects_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtTypeFactory);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDataFileName);
@@ -161,6 +190,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.Text = "КПО:4381:Кострина";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockSearchProjectListCommand)).EndInit();
@@ -183,6 +213,9 @@
         private System.Windows.Forms.TextBox txtDataFileName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTypeFactory;
+        private System.Windows.Forms.ToolStripMenuItem mnSaveSearchProjects;
     }
 }
 

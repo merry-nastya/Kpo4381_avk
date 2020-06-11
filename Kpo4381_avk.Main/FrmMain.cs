@@ -9,20 +9,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kpo4381_avk.Lib;
+using Kpo4381_avk.Lib.source.MyClasses;
 
 namespace Kpo4381_avk.Main
 {
     public partial class FrmMain : Form
     {
+
+        private List<SearchProject> searchProjectsList = null;
+        private BindingSource bsSearchProject = new BindingSource();
+        private ISearchProjectFactory factory;
         public FrmMain()
         {
             InitializeComponent();
             txtLogPath.Text = AppGlobalSettings.logPath;
             txtDataFileName.Text = AppGlobalSettings.dataFileName;
+            txtTypeFactory.Text = AppGlobalSettings.searchProjectFactory;
+            
+            switch (AppGlobalSettings.searchProjectFactory)
+            {
+                case "test":
+                    factory = new SearchProjectTestFactory();
+                    break;
+                case "stlitFile":
+                    factory = new SearchProjectSplitFileFactory();
+                    break;
+                default:
+                    factory = new SearchProjectTestFactory();
+                    break;
+            }
 
         }
-        private List<SearchProject> searchProjectsList = null;
-        private BindingSource bsSearchProject = new BindingSource();
+        
         private void mnExit_Click(object sender, EventArgs e)
         {
             Close();
@@ -32,7 +50,7 @@ namespace Kpo4381_avk.Main
         {
             try
             {
-                ISearchProjectListLoader loader = new SearchProjectListTestLoader();
+                ISearchProjectListLoader loader = factory.CreateSearchProjectListLoader();
                 loader.Execute();
                 searchProjectsList = loader.searchProjectList;
                 bsSearchProject.DataSource = searchProjectsList;
@@ -64,6 +82,15 @@ namespace Kpo4381_avk.Main
 
         }
 
-        
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnSaveSearchProjects_Click(object sender, EventArgs e)
+        {
+            ISearchProjectListSaver saver = factory.CreateSearchProjectListSaver();
+            saver.SaveFile(searchProjectsList);
+        }
     }
 }

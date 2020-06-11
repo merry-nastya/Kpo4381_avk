@@ -23,11 +23,24 @@ namespace Kpo4381_avk.Lib
             get { return _dataFileName; }
         }
 
+        private static string _searchProjectFactory;
+        public static string searchProjectFactory
+        {
+            get { return _searchProjectFactory; }
+        }
+
+        private static string _saveFileName;
+        public static string saveFileName
+        {
+            get { return _saveFileName; }
+        }
         public static void Initialize()
         {
             AppConfigUtility appConfigUtility = new AppConfigUtility();
             _logPath = appConfigUtility.AppSettings("logPath");
             _dataFileName = appConfigUtility.AppSettings("dataFileName");
+            _searchProjectFactory = appConfigUtility.AppSettings("typeFactory");
+            _saveFileName = appConfigUtility.AppSettings("saveFileName");
         }
 
     }
