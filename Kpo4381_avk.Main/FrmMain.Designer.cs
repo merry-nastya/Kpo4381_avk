@@ -57,7 +57,7 @@
             this.mmProject});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,8 +68,9 @@
             this.mnOpen,
             this.mnSaveSearchProjects});
             this.mmFile.Name = "mmFile";
-            this.mmFile.Size = new System.Drawing.Size(70, 26);
+            this.mmFile.Size = new System.Drawing.Size(70, 24);
             this.mmFile.Text = "1.Файл";
+            this.mmFile.Click += new System.EventHandler(this.mmFile_Click);
             // 
             // mnExit
             // 
@@ -113,9 +114,9 @@
             this.SStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.SStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusLabel});
-            this.SStatus.Location = new System.Drawing.Point(0, 426);
+            this.SStatus.Location = new System.Drawing.Point(0, 428);
             this.SStatus.Name = "SStatus";
-            this.SStatus.Size = new System.Drawing.Size(800, 24);
+            this.SStatus.Size = new System.Drawing.Size(800, 22);
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
             // 

@@ -87,5 +87,10 @@ namespace Kpo4381_avk.Main
             ISearchProjectListSaver saver = IOCcontainer.container.Resolve<ISearchProjectListSaver>();
             saver.SaveFile(searchProjectsList);
         }
+
+        private void mmFile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

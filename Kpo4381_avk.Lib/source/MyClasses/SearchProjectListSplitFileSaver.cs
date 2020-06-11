@@ -7,21 +7,34 @@ using System.IO;
 
 namespace Kpo4381_avk.Lib
 {
-    class SearchProjectListSplitFileSaver : ISearchProjectListSaver
+     public class SearchProjectListSplitFileSaver : ISearchProjectListSaver
     {
         private List<SearchProject> _searchProjectList = null;
         private string _saveFileName = "";
 
+        public SearchProjectListSplitFileSaver(string path = "")
+        {
+            if (path == "")
+            {
+                _saveFileName = AppGlobalSettings.saveFileName;
+            }
+            else
+            {
+                _saveFileName = path;
+            }
+        }
+
         public void SaveFile(List<SearchProject> searchProjectList)
         {
             _searchProjectList = searchProjectList;
-            _saveFileName = AppGlobalSettings.saveFileName;
+            List<string> strings = new List<string>();
             foreach( SearchProject i in _searchProjectList)
             {
-                string searchProject = i.year + "|" + i.director + "|" + i.diamAntenna + "|" + i.frequency + "\n";
-                File.WriteAllText(_saveFileName, searchProject);
+               string searchProject = i.year + "|" + i.director + "|" + i.diamAntenna + "|" + i.frequency;
+                strings.Add(searchProject);
 
             }
+            File.WriteAllLines(_saveFileName, strings); 
 
         }
     }

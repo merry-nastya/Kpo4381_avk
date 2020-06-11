@@ -30,9 +30,16 @@ namespace Kpo4381_avk.Lib
             get { return _status; }
         }
 
-        public SearchProjectListSplitFileLoader()
+        public SearchProjectListSplitFileLoader(string path = "")
         {
-            _dataFileName = AppGlobalSettings.dataFileName;
+           if(path == "")
+           {
+                _dataFileName = AppGlobalSettings.dataFileName;
+           }
+           else
+           {
+                _dataFileName = path;
+           }
             _searchProjectList = new List<SearchProject>();
         }
 

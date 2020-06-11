@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_avk.Main", "Kpo4381
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kpo4381_avk.Lib", "Kpo4381_avk.Lib\Kpo4381_avk.Lib.csproj", "{77439000-C0BD-40CF-A21C-66DFF506748B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchProjectsTests", "SearchProjectsTests\SearchProjectsTests.csproj", "{EB148922-D4A5-4A79-9259-D1BE2C6F03CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{77439000-C0BD-40CF-A21C-66DFF506748B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77439000-C0BD-40CF-A21C-66DFF506748B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77439000-C0BD-40CF-A21C-66DFF506748B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB148922-D4A5-4A79-9259-D1BE2C6F03CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB148922-D4A5-4A79-9259-D1BE2C6F03CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB148922-D4A5-4A79-9259-D1BE2C6F03CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB148922-D4A5-4A79-9259-D1BE2C6F03CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
