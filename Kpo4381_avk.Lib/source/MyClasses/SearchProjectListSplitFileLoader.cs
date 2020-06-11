@@ -36,6 +36,17 @@ namespace Kpo4381_avk.Lib
             _searchProjectList = new List<SearchProject>();
         }
 
+        private Delegate.OnStatusChangedDelegate _onStatusChangedDelegate = null;
+        public Delegate.OnStatusChangedDelegate onStatusChangedDelegate
+        {
+            get { return _onStatusChangedDelegate; }
+        }
+
+        public void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged)
+        {
+            _onStatusChangedDelegate = onStatusChanged;
+        }
+
         public void Execute()
         {
             _status = LoadStatus.Reading;
@@ -44,6 +55,7 @@ namespace Kpo4381_avk.Lib
             {
 
                 _status = LoadStatus.FileNameIsEmpty;
+                onStatusChangedDelegate?.Invoke(_status);
                 throw new Exception("Имя файла отсутствует");
 
             }
@@ -51,6 +63,7 @@ namespace Kpo4381_avk.Lib
             {
 
                 _status = LoadStatus.FileNotExists;
+                onStatusChangedDelegate?.Invoke(_status);
                 throw new FileNotFoundException();
             }
 
@@ -82,6 +95,7 @@ namespace Kpo4381_avk.Lib
                 }
             }
             _status = LoadStatus.Success;
+            onStatusChangedDelegate?.Invoke(_status);
         }
     }
 }

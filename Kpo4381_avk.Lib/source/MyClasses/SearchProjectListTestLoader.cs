@@ -25,6 +25,17 @@ namespace Kpo4381_avk.Lib
             _searchProjectList = new List<SearchProject>();
         }
 
+        private Delegate.OnStatusChangedDelegate _onStatusChangedDelegate = null;
+        public Delegate.OnStatusChangedDelegate onStatusChangedDelegate
+        {
+            get { return _onStatusChangedDelegate; }
+        }
+
+        public void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged)
+        {
+            _onStatusChangedDelegate = onStatusChanged;
+        }
+
         public void Execute()
         {
 

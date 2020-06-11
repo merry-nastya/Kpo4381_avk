@@ -32,6 +32,7 @@
             this.mmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnSaveSearchProjects = new System.Windows.Forms.ToolStripMenuItem();
             this.mmProject = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenProject = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
@@ -42,8 +43,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTypeFactory = new System.Windows.Forms.TextBox();
-            this.mnSaveSearchProjects = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockSearchProjectListCommand)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,16 +74,23 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(224, 26);
+            this.mnExit.Size = new System.Drawing.Size(166, 26);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(224, 26);
+            this.mnOpen.Size = new System.Drawing.Size(166, 26);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
+            // 
+            // mnSaveSearchProjects
+            // 
+            this.mnSaveSearchProjects.Name = "mnSaveSearchProjects";
+            this.mnSaveSearchProjects.Size = new System.Drawing.Size(166, 26);
+            this.mnSaveSearchProjects.Text = "Сохранить";
+            this.mnSaveSearchProjects.Click += new System.EventHandler(this.mnSaveSearchProjects_Click);
             // 
             // mmProject
             // 
@@ -102,9 +111,11 @@
             // SStatus
             // 
             this.SStatus.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.SStatus.Location = new System.Drawing.Point(0, 428);
+            this.SStatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabel});
+            this.SStatus.Location = new System.Drawing.Point(0, 426);
             this.SStatus.Name = "SStatus";
-            this.SStatus.Size = new System.Drawing.Size(800, 22);
+            this.SStatus.Size = new System.Drawing.Size(800, 24);
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
             // 
@@ -166,12 +177,10 @@
             this.txtTypeFactory.Size = new System.Drawing.Size(100, 22);
             this.txtTypeFactory.TabIndex = 8;
             // 
-            // mnSaveSearchProjects
+            // statusLabel
             // 
-            this.mnSaveSearchProjects.Name = "mnSaveSearchProjects";
-            this.mnSaveSearchProjects.Size = new System.Drawing.Size(224, 26);
-            this.mnSaveSearchProjects.Text = "Сохранить";
-            this.mnSaveSearchProjects.Click += new System.EventHandler(this.mnSaveSearchProjects_Click);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 18);
             // 
             // FrmMain
             // 
@@ -193,6 +202,8 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.SStatus.ResumeLayout(false);
+            this.SStatus.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockSearchProjectListCommand)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,6 +227,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTypeFactory;
         private System.Windows.Forms.ToolStripMenuItem mnSaveSearchProjects;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
     }
 }
 

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kpo4381_avk.Lib;
-using Kpo4381_avk.Lib.source.MyClasses;
+
 using Castle.Windsor;
 
 namespace Kpo4381_avk.Main
@@ -35,10 +35,16 @@ namespace Kpo4381_avk.Main
             Close();
         }
 
+        private void updateStatus(LoadStatus status)
+        {
+            statusLabel.Text = status.ToString();
+        }
+
         private void mnOpen_Click(object sender, EventArgs e)
         {
             try
             {
+                IOCcontainer.container.Resolve<ISearchProjectListLoader>().SetOnStatusChanged(updateStatus);
                 ISearchProjectListLoader loader = IOCcontainer.container.Resolve<ISearchProjectListLoader>();
                 loader.Execute();
                 searchProjectsList = loader.searchProjectList;

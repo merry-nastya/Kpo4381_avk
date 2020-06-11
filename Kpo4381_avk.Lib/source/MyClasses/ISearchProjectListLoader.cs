@@ -6,6 +6,8 @@ namespace Kpo4381_avk.Lib
     {
         List<SearchProject> searchProjectList { get; }
         LoadStatus status { get; }
+        Delegate.OnStatusChangedDelegate onStatusChangedDelegate { get; }
+        void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged);
 
         void Execute();
     }

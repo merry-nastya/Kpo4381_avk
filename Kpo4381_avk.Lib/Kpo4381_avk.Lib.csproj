@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="source\Common\AppGlobalSettings.cs" />
+    <Compile Include="source\MyClasses\Delegate.cs" />
     <Compile Include="source\MyClasses\IOCcontainer.cs" />
     <Compile Include="source\MyClasses\ISearchProjectListLoader.cs" />
     <Compile Include="source\MyClasses\ISearchProjectListSaver.cs" />
