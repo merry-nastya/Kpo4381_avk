@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Kpo4381_avk.Lib;
 using Kpo4381_avk.Lib.source.MyClasses;
+using Castle.Windsor;
 
 namespace Kpo4381_avk.Main
 {
@@ -18,7 +19,7 @@ namespace Kpo4381_avk.Main
 
         private List<SearchProject> searchProjectsList = null;
         private BindingSource bsSearchProject = new BindingSource();
-        private ISearchProjectFactory factory;
+        
         public FrmMain()
         {
             InitializeComponent();
@@ -26,18 +27,6 @@ namespace Kpo4381_avk.Main
             txtDataFileName.Text = AppGlobalSettings.dataFileName;
             txtTypeFactory.Text = AppGlobalSettings.searchProjectFactory;
             
-            switch (AppGlobalSettings.searchProjectFactory)
-            {
-                case "test":
-                    factory = new SearchProjectTestFactory();
-                    break;
-                case "stlitFile":
-                    factory = new SearchProjectSplitFileFactory();
-                    break;
-                default:
-                    factory = new SearchProjectTestFactory();
-                    break;
-            }
 
         }
         
@@ -50,7 +39,7 @@ namespace Kpo4381_avk.Main
         {
             try
             {
-                ISearchProjectListLoader loader = factory.CreateSearchProjectListLoader();
+                ISearchProjectListLoader loader = IOCcontainer.container.Resolve<ISearchProjectListLoader>();
                 loader.Execute();
                 searchProjectsList = loader.searchProjectList;
                 bsSearchProject.DataSource = searchProjectsList;
@@ -89,7 +78,7 @@ namespace Kpo4381_avk.Main
 
         private void mnSaveSearchProjects_Click(object sender, EventArgs e)
         {
-            ISearchProjectListSaver saver = factory.CreateSearchProjectListSaver();
+            ISearchProjectListSaver saver = IOCcontainer.container.Resolve<ISearchProjectListSaver>();
             saver.SaveFile(searchProjectsList);
         }
     }
