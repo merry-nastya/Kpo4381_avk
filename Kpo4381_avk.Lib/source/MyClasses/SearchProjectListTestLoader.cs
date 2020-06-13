@@ -73,5 +73,9 @@ namespace Kpo4381_avk.Lib
                 _searchProjectList.Add(searchProject);
             }
         }
+        public void Sort(string property = "")
+        {
+
+        }
     }
 }

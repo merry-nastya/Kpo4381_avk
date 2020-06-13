@@ -104,5 +104,37 @@ namespace Kpo4381_avk.Lib
             _status = LoadStatus.Success;
             onStatusChangedDelegate?.Invoke(_status);
         }
+
+        /* Этот метод сортирует объекты в списке по заданному критерию */
+        public void Sort(string property = "")
+        {
+
+            try
+            {   //сравнение переданного аргумента с возможными вариантами
+                switch (property)
+                {
+                    //если передали критерий "Диаметр антенны", то отсортировать элементы списка по данному свойству
+                    case "diamAntenna":
+                        searchProjectList.Sort((pro1, pro2) => pro1.diamAntenna.CompareTo(pro2.diamAntenna));
+                        break;
+                    //если передали критерий "Частота", то отсортировать элементы списка по данному свойству
+                    case "frequency":
+                        searchProjectList.Sort((pro1, pro2) => pro1.frequency.CompareTo(pro2.frequency));
+                        break;
+                    //если передали другой критерий или ничего не передали сгенирировать ошибку 
+                    default:
+                        throw new Exception("Передан некорректный критерий сортировки.");
+
+                }
+            }
+            //если возникла ошибка, записать ее в файл error.log
+            catch (Exception ex)
+            {
+                LogUtility.ErrorLog(ex);
+                throw ex;
+            }
+
+
+        }
     }
 }

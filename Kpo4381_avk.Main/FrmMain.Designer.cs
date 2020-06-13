@@ -36,6 +36,7 @@
             this.mmProject = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenProject = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.dgvMockSearchProjectListCommand = new System.Windows.Forms.DataGridView();
             this.txtLogPath = new System.Windows.Forms.TextBox();
             this.txtDataFileName = new System.Windows.Forms.TextBox();
@@ -43,7 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTypeFactory = new System.Windows.Forms.TextBox();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.buttonSort = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMockSearchProjectListCommand)).BeginInit();
@@ -98,7 +99,7 @@
             this.mmProject.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnOpenProject});
             this.mmProject.Name = "mmProject";
-            this.mmProject.Size = new System.Drawing.Size(137, 26);
+            this.mmProject.Size = new System.Drawing.Size(137, 24);
             this.mmProject.Text = "2.Проект поиска";
             this.mmProject.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -119,6 +120,11 @@
             this.SStatus.Size = new System.Drawing.Size(800, 22);
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 16);
             // 
             // dgvMockSearchProjectListCommand
             // 
@@ -178,16 +184,23 @@
             this.txtTypeFactory.Size = new System.Drawing.Size(100, 22);
             this.txtTypeFactory.TabIndex = 8;
             // 
-            // statusLabel
+            // buttonSort
             // 
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(0, 18);
+            this.buttonSort.Enabled = false;
+            this.buttonSort.Location = new System.Drawing.Point(661, 198);
+            this.buttonSort.Name = "buttonSort";
+            this.buttonSort.Size = new System.Drawing.Size(127, 44);
+            this.buttonSort.TabIndex = 9;
+            this.buttonSort.Text = "Сортировать";
+            this.buttonSort.UseVisualStyleBackColor = true;
+            this.buttonSort.Click += new System.EventHandler(this.buttonSort_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonSort);
             this.Controls.Add(this.txtTypeFactory);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -229,6 +242,7 @@
         private System.Windows.Forms.TextBox txtTypeFactory;
         private System.Windows.Forms.ToolStripMenuItem mnSaveSearchProjects;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
+        private System.Windows.Forms.Button buttonSort;
     }
 }
 

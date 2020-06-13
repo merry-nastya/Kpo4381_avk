@@ -38,6 +38,10 @@ namespace Kpo4381_avk.Main
         private void updateStatus(LoadStatus status)
         {
             statusLabel.Text = status.ToString();
+            if (status == LoadStatus.Success)
+            {
+                buttonSort.Enabled = true;
+            }
         }
 
         private void mnOpen_Click(object sender, EventArgs e)
@@ -47,9 +51,7 @@ namespace Kpo4381_avk.Main
                 IOCcontainer.container.Resolve<ISearchProjectListLoader>().SetOnStatusChanged(updateStatus);
                 ISearchProjectListLoader loader = IOCcontainer.container.Resolve<ISearchProjectListLoader>();
                 loader.Execute();
-                searchProjectsList = loader.searchProjectList;
-                bsSearchProject.DataSource = searchProjectsList;
-                dgvMockSearchProjectListCommand.DataSource = bsSearchProject;
+                dgvMockSearchProjectListCommand.DataSource = loader.searchProjectList;
             }
             catch (NotImplementedException ex)
             {
@@ -105,6 +107,14 @@ namespace Kpo4381_avk.Main
         private void mmFile_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            IOCcontainer.container.Resolve<ISearchProjectListLoader>().SetOnStatusChanged(updateStatus);
+            ISearchProjectListLoader loader = IOCcontainer.container.Resolve<ISearchProjectListLoader>();
+            loader.Sort("diamAntenna");
+            dgvMockSearchProjectListCommand.Refresh();
         }
     }
 }

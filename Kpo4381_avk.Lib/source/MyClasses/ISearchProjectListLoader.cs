@@ -8,7 +8,7 @@ namespace Kpo4381_avk.Lib
         LoadStatus status { get; }
         Delegate.OnStatusChangedDelegate onStatusChangedDelegate { get; }
         void SetOnStatusChanged(Delegate.OnStatusChangedDelegate onStatusChanged);
-
         void Execute();
+        void Sort(string property = "");
     }
 }

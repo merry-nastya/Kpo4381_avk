@@ -7,7 +7,7 @@ using System.IO;
 namespace SearchProjectsTests
 {
     [TestClass]
-    public class UnitTest1
+    public class SaveTest
     {
         [TestMethod]
         public void SaveSplitFileTest()
@@ -31,6 +31,29 @@ namespace SearchProjectsTests
             Assert.AreEqual(loader.searchProjectList[0].diamAntenna, testSearchProject.diamAntenna);
             Assert.AreEqual(loader.searchProjectList[0].frequency, testSearchProject.frequency);
             File.WriteAllText("NewSearchProject.txt", "");
+
+        }
+
+       
+
+        [TestMethod]
+        public void FilePathTest()
+        {
+            List<SearchProject> searchProjects = new List<SearchProject>();
+            SearchProject testSearchProject = new SearchProject()
+            {
+                year = "1960",
+                director = "Дрейк",
+                diamAntenna = 26,
+                frequency = 1420
+            };
+            searchProjects.Add(testSearchProject);
+            ISearchProjectListSaver saver = new SearchProjectListSplitFileSaver("C:/Windows/help/NewSearchProject.txt");
+
+            Assert.ThrowsException<UnauthorizedAccessException>(()  => { 
+                
+                 saver.SaveFile(searchProjects);
+            });
 
         }
     }
